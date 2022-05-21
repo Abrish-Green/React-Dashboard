@@ -4,6 +4,7 @@ import Navbar from '../../Components/Dashboard/Navbar'
 import Sidebar from '../../Components/Dashboard/Sidebar'
 
 const Dashboard = () => {
+ 
   return (
     <React.Fragment>
         <Navbar />

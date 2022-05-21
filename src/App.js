@@ -15,26 +15,27 @@ import PublicRoute from "./Routes/PublicRoute";
 import { ProtectedRoute } from "./Routes/ProtectedRoute";
 import { loadUser } from "./Services/Redux/Actions/Auth";
 import { LoadUser } from "./Services/Authentication";
+import { GetUsers } from "./Services/Users Service";
 
 const  App = () => {
   const state = useSelector(state => state.auth)
   const dispatch = useDispatch();
-
   React.useEffect(() => {
         dispatch(loadUser())   
-
   }, [dispatch])
 
-          console.log(state)
-
+          
     return (
       <React.Fragment>
        <BrowserRouter>
 
         <Routes>
-            
-                <Route index element={<Login />} />
+            <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
+            <Route element={<PublicRoute />}>
+                <Route index element={<Login />} />
+            </Route>
 
             
         </Routes>

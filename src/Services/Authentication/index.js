@@ -1,12 +1,9 @@
-import { data } from "autoprefixer"
 import axios from "axios"
-import React from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { LOAD_USER } from "../Redux/Constants"
-
+import { GetUsers } from "../Users Service"
 
 //Login Service
 export const Login = async (user) => {
+    console.log(await GetUsers())
         let result = null
         try{
             await axios({
