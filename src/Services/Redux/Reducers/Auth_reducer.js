@@ -4,13 +4,16 @@ const intialState = {
     id: null,
     user_name: null,
     email: null,
-    roles: null
+    roles: [],
+    isLoggedIn: false,
+    message: null
+
 }
 
 const AuthReducer = (state = intialState, action) => {
     switch(action.type){
         case LOGIN_SUCCESS:
-            return [...state, action.payload]
+            return action.payload
         case LOGIN_FAIL:
             return action.payload
         default:

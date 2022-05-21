@@ -7,9 +7,9 @@ const Dashboard = () => {
   return (
     <React.Fragment>
         <Navbar />
-        <div class="flex overflow-hidden bg-white pt-16">
+        <div className="flex overflow-hidden bg-white pt-16">
             <Sidebar />
-            <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+            <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
             <Content />
         </div>
     </React.Fragment>
