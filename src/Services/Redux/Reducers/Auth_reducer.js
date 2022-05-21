@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL } from '../Constants'
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOAD_USER, LOAD_FAIL } from '../Constants'
 const intialState = {
     token: localStorage.getItem('token'),
     id: null,
@@ -6,7 +6,8 @@ const intialState = {
     email: null,
     roles: [],
     isLoggedIn: false,
-    message: null
+    message: null,
+    loading: true
 
 }
 
@@ -15,6 +16,9 @@ const AuthReducer = (state = intialState, action) => {
         case LOGIN_SUCCESS:
             return action.payload
         case LOGIN_FAIL:
+        case LOAD_FAIL:
+            return action.payload
+        case LOAD_USER:
             return action.payload
         default:
             return state;

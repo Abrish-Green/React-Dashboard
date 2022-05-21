@@ -13,11 +13,20 @@ import { useDispatch,useSelector } from 'react-redux'
 import { useLocalStorage } from './Hooks/LocalStorageHook'
 import PublicRoute from "./Routes/PublicRoute";
 import { ProtectedRoute } from "./Routes/ProtectedRoute";
+import { loadUser } from "./Services/Redux/Actions/Auth";
+import { LoadUser } from "./Services/Authentication";
 
-function App() {
-const state = useSelector(state => state.auth)
-  console.log(state)
-  
+const  App = () => {
+  const state = useSelector(state => state.auth)
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+        dispatch(loadUser())   
+
+  }, [dispatch])
+
+          console.log(state)
+
     return (
       <React.Fragment>
        <BrowserRouter>
