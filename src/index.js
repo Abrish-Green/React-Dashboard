@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://destadeal.com:8082';
+axios.defaults.baseURL = '#privateURL';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
